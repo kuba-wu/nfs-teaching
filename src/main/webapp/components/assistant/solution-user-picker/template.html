@@ -1,0 +1,17 @@
+<div class="btn-group" style="margin: 0px 0px 0px 0px;">
+    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        pick one... <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <!--ko foreach: solutions-->
+        <li>
+            <a href="#" data-bind="click: $parent.selectSolution">
+                <h5 class="list-group-item-heading" data-bind="text: 'User: '+user.login" style="font-weight: bold;"></h5>
+                <p class="list-group-item-text">
+                    <span>Saved on: </span><span data-bind="date: savedOn"></span>
+                </p>
+            </a>
+        </li>
+        <!--/ko-->
+    </ul>
+</div>

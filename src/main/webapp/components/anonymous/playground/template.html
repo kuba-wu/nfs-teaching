@@ -1,0 +1,46 @@
+<div>
+    <nav class="navbar navbar-default navbar-fixed-top" style="margin-top: 50px; z-index: 999;">
+        <div class="container">
+            <task-picker id="osPicker"  params="view: 'playground'"></task-picker>
+            <sim-run params="view: 'playground'"></sim-run>
+        </div>
+    </nav>
+    <!-- MAIN VIEW-->
+    <div id='mainContainer' class='container body'>  
+        <!-- ORGANIZED SYSTEMS DEFINITION view -->
+        <legend>
+            <span>Organized Systems definition</span>
+            <a data-toggle='collapse' data-bind="attr: {href: '#'+containerId}" ><span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+        </legend>
+        <div data-bind="attr: {id: containerId}" class='panel-body collapse main'>
+            <div class="row">
+                <task-header params="view: 'playground'"></task-header>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <code-editor params="view: 'playground'"></code-editor>
+                </div>
+                <div class="col-md-6">
+                    <parameters-editor params="view: 'playground'"></parameters-editor>
+                </div>
+            </div>
+        </div>
+        <!-- ORGANIZED SYSTEMS GRAPH view -->
+        <legend>
+            <span>Organized Systems graph</span>
+            <a data-toggle='collapse' href='#SystemGraph'><span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+        </legend>
+        <div class='main'>
+            <graph params="view: 'playground'"></graph>
+        </div>
+        <!-- SIMULATION CHART view -->
+        <legend>
+            <span>Simulation chart</span>
+            <a data-toggle='collapse' href='#ConcentrationsChart'><span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+        </legend>
+        <div class='main'>
+            <chart params="view: 'playground'"></chart>
+        </div>
+        <hr />
+    </div>
+</div>

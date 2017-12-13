@@ -1,0 +1,8 @@
+<form role="form">
+    <div class="form-group has-feedback">
+        <input class="form-control" id="searchinput" type="search" placeholder="Search User..." data-bind="textInput: query" autocomplete="off">
+    </div>
+    <div class="list-group" data-bind="foreach: filteredUsers">
+        <a class="list-group-item" href="#" data-bind="click: $parent.select"><span data-bind="text: login"></span></a>
+    </div>
+</form>

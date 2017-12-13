@@ -1,0 +1,25 @@
+<div class="well well-sm">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Task:</label>
+            <div class="col-sm-3">
+                <select class="form-control" data-bind="attr: {id: containerId}, options: tasks, optionsText: 'name', value: searchTask"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Starts after:</label>
+            <div class="col-sm-3" style="text-align: right">
+                <input data-bind="kendoDateTimePicker: searchDateStart" />
+            </div>
+            <div class="col-sm-2">
+                <button class="btn btn-success" data-bind="click: search">Find exercises</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Ends before:</label>
+            <div class="col-sm-3" style="text-align: right">
+                <input data-bind="kendoDateTimePicker: searchDateEnd" />
+            </div>
+        </div>
+    </form>
+</div>

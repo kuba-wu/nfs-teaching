@@ -1,0 +1,20 @@
+<div class="btn-group" style="margin: 0px 10px 0px 10px;">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <!-- ko text: name --><!-- /ko --> <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <!--ko foreach: exercises-->
+        <li>
+            <a href="#" data-bind="click: $parent.selectExercise">
+                <h5 class="list-group-item-heading" data-bind="text: task.name, css: {expired: end < (new Date()), future: start > (new Date())}" style="font-weight: bold;"></h5>
+                <p class="list-group-item-text">
+                    <span>Starts: </span><span data-bind="date: start"></span>
+                </p>
+                <p class="list-group-item-text">
+                    <span>Ends: </span><span data-bind="date: end"></span>
+                </p>
+            </a>
+        </li>
+        <!--/ko-->
+    </ul>
+</div>

@@ -1,0 +1,33 @@
+<div class="exercise-header panel-heading" data-bind="if: exercise">
+    <span>Exercise</span>
+</div>
+<div class="panel-body" data-bind="visible: exercise">
+    <div class="container">
+        <!-- ko if: exercise -->
+        <div class="row">
+            <label class="col-md-2">Task (name):</label>
+            <div class="col-md-10">
+                <span data-bind="text: exercise().task.name"></span>
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-md-2">Starts:</label>
+            <div class="col-md-10">
+                <span data-bind="date: exercise().start"></span>
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-md-2">Ends:</label>
+            <div class="col-md-10">
+                <span data-bind="date: exercise().end"></span>
+            </div>
+        </div>
+        <!-- /ko -->
+        <div class="row" data-bind="visible: exercise">
+            <label class="col-md-2">Submitted solutions:</label>
+            <div class="col-md-10">
+                <solution-user-picker params="view: 'solution-review'"></solution-user-picker>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="panel panel-default">
+    <div class="exercise-header panel-heading">
+        <span data-bind="ifnot: solution">Exercise</span>
+        <!-- ko if: solution -->
+        <span data-bind="text: solution().exercise.task.name"></span>
+        <!-- /ko -->
+    </div>
+    <div class="panel-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="margin-bottom: 10px;">
+                    <solution-picker params="view: 'exercises'"></solution-picker>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" data-bind="if: solution">
+                    <p>
+                        <span style="font-weight: bold;">Description: </span>
+                        <span data-bind="text: solution().exercise.task.description"></span>
+                    </p>
+                    <p>
+                        <span style="font-weight: bold;">Starts: </span>
+                        <span data-bind="date: solution().exercise.start"></span>
+                    </p>
+                    <p>
+                        <span style="font-weight: bold;">Ends: </span>
+                        <span data-bind="date: solution().exercise.end"></span>
+                    </p>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <!-- ko if: solution -->
+    <div class="exercise-header panel-heading">Solution</div>
+    <div class="panel-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <p>
+                        <span style="font-weight: bold;">Saved on: </span>
+                        <span data-bind="date: solution().savedOn"></span>
+                    </p>
+                    <div class="form-group">
+                        <label for="comment">User comment:</label>
+                        <textarea class="form-control" id="comment" data-bind="textInput: solution().comment"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-5"></div>
+                <div class="col-md-2">
+                    <p data-bind="if: isActive()">
+                        <button type="button" class="btn btn-success" data-bind="click: save">Save solution</button>
+                    </p>
+                    <p data-bind="if: isActive()">
+                        <button type="button" class="btn btn-danger" data-bind="click: reset">Reset to original</button>
+                    </p>
+                </div>
+            </div>
+        </div>          
+    </div>
+    <!-- /ko -->
+</div>

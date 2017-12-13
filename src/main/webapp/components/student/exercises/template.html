@@ -1,0 +1,35 @@
+<div>
+    <nav class="navbar navbar-default navbar-fixed-top" style="margin-top: 50px; z-index: 999;">
+        <div class="container">
+            <sim-run params="view: 'exercises'"></sim-run>
+        </div>
+    </nav>
+    <!-- MAIN VIEW-->
+    <div id='mainContainer' class='container body'>
+        <div class="row">
+            <div class="col-md-12">
+                <exercise-data params="view: 'exercises'"></exercise-data>
+            </div>
+        </div>
+        <div class="row collapse" data-bind="attr: {'id' : containerId}">
+            <div class="col-md-6" style="padding-right: 7px;">
+                <code-editor params="view: 'exercises'"></code-editor>
+            </div>
+            <div class="col-md-6" style="padding-left: 7px;">
+                <parameters-editor params="view: 'exercises'"></parameters-editor>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 30px;">
+            <div class='main'>
+                <graph params="view: 'exercises'"></graph>
+            </div>
+        </div>
+        <div class="row">
+            <div class='main'>
+                <chart params="view: 'exercises'"></chart>
+            </div>
+        </div>
+        <hr />
+    </div>
+</div>
+<span data-bind="template: {afterRender: ExercisesModel.init}"></span>

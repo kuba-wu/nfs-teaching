@@ -1,0 +1,60 @@
+<div id='mainContainer' class='container body'>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <user-search params="view: 'user-management'"></user-search>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <add-user params="view: 'user-management'"></add-user>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8" data-bind="if: user">
+            <div class="panel panel-default">
+                <div class="panel-heading">User</div>
+                <div class="panel-body">
+                    <div class="container">
+                        <div class="row">
+                            <label class="col-sm-2">User (login):</label>
+                            <div class="col-sm-4">
+                                <span data-bind="text: user().login"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="col-sm-2">Roles:</label>
+                            <div class="col-sm-4">
+                                <select data-bind="kendoMultiSelect: { data: allRoles, value: selectedRoles }"></select>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 10px;">
+                            <div class="col-sm-2">
+                                <div class="checkbox">
+                                    <label> 
+                                        <input type="checkbox" data-bind="checked: changePassword"> 
+                                        Change password?
+                                    </label>
+                                </div>                         
+                            </div>
+                            <div class="col-sm-4" data-bind="if: changePassword">
+                                <input type="password" class="form-control" id="inputPassword2" placeholder="New password" data-bind="value: password">
+                            </div>
+                        </div>
+                        
+                        <div class="row" >
+                            <div class="col-sm-8">
+                                <button class="btn btn-success" data-bind="click: save">Save user</button>
+                                <button class="btn btn-danger" data-bind="click: remove" style="margin-left: 10px;">Remove user</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+</div>

@@ -1,0 +1,25 @@
+<div class="exercise-header panel-heading" data-bind="visible: solution">
+    <span>Solution</span>
+</div>
+<div class="panel-body" data-bind="if: solution">
+    <div class="container">
+        <div class="row">
+            <label class="col-md-2">User:</label>
+            <div class="col-md-10">
+                <span data-bind="text: solution().user.login"></span>
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-md-2">Saved on:</label>
+            <div class="col-md-10">
+                <span data-bind="date: solution().savedOn"></span>
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-md-2">User comment:</label>
+            <div class="col-md-10">
+                <span data-bind="text: solution().comment"></span>
+            </div>
+        </div>
+    </div>
+</div>

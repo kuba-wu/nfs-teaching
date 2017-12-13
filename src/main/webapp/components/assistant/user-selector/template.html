@@ -1,0 +1,36 @@
+<div class="container" data-bind="if: exercise">
+    <div class="row">
+        <div class="col-xs-2" style="padding-left: 0px;">
+            <p>Available users</p>
+            <select data-bind="attr: {id: usersId}" name="from[]" class="form-control" size="11" multiple="multiple">
+            </select>
+        </div>
+        <div class="col-xs-1">
+            <p style="visibility: hidden;">SPACER</p>
+            <input style="height: 34px; visibility: hidden;">
+            <button type="button" data-bind="attr: {id: usersId+'_undo'}" class="btn btn-primary btn-block btn-sm">undo</button>
+            <button type="button" data-bind="attr: {id: usersId+'_rightAll'}" class="btn btn-default btn-block btn-sm">
+                <i class="glyphicon glyphicon-forward"></i>
+            </button>
+            <button type="button" data-bind="attr: {id: usersId+'_rightSelected'}" class="btn btn-default btn-block btn-sm">
+                <i class="glyphicon glyphicon-chevron-right"></i>
+            </button>
+            <button type="button" data-bind="attr: {id: usersId+'_leftSelected'}" class="btn btn-default btn-block btn-sm">
+                <i class="glyphicon glyphicon-chevron-left"></i>
+            </button>
+            <button type="button" data-bind="attr: {id: usersId+'_leftAll'}" class="btn btn-default btn-block btn-sm">
+                <i class="glyphicon glyphicon-backward"></i>
+            </button>
+            <button type="button" data-bind="attr: {id: usersId+'_redo'}" class="btn btn-warning btn-block btn-sm">redo</button>
+        </div>
+        <div class="col-xs-2">
+            <p>Assigned users</p>
+            <select name="to[]" data-bind="attr: {id: usersId+'_to'}" class="form-control" size="11" multiple="multiple"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5" style="margin-top: 10px; padding-left: 0px;">
+            <add-user params="view: 'user-selector'"></add-user>
+        </div>
+    </div>
+</div>
